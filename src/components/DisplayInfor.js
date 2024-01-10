@@ -1,26 +1,40 @@
 import React from "react";
 import logo from "./../logo.png"
 
-class DisplayInfor extends React.Component{
-    state = {
-        isShowListUser: true
-    }
-    handleShowHide = () => {
-        this.setState({
-            isShowListUser: !this.state.isShowListUser
-        })
-    }
-    render () {
-        const {listUsers} = this.props;
+// class DisplayInfor extends React.Component{
+    // render () {
+    //     console.log("Render")
+    //     const {listUsers} = this.props;
+    //     return(
+    //         <div>
+    //             {/*img src={logo} className="img"/ */}
+    //             {true && 
+    //                 <div>
+    //                     {listUsers.map((user, index) => {
+    //                         return (
+    //                                     <div key={user.id} className={+user.age>18 ? "green":"red"}>
+    //                                         <div> My name is {user.name}. </div>
+    //                                         <div> I am {user.age} years old.</div>
+    //                                         <hr/>
+    //                                         <div>
+    //                                             <button onClick={() => this.props.handleDeleteUser(user.id)}>Xóa</button>
+    //                                         </div>
+    //                                     </div>
+    //                                 )
+    //                     })}
+    //                 </div>
+    //             }
+    //         </div>
+    //     )
+    // }
+    // }
+
+const DisplayInfor = (props) => {
+        const {listUsers} = props;
         return(
             <div>
-                <img src={logo} className="img"/>
-                <div>
-                    <span onClick={()=> {this.handleShowHide()}}>
-                        {this.state.isShowListUser === true ? "Hide list user":"Show list user"}
-                    </span>
-                </div>
-                {this.state.isShowListUser && 
+                {/*img src={logo} className="img"/ */}
+                {true && 
                     <div>
                         {listUsers.map((user, index) => {
                             return (
@@ -29,7 +43,7 @@ class DisplayInfor extends React.Component{
                                             <div> I am {user.age} years old.</div>
                                             <hr/>
                                             <div>
-                                                <button onClick={() => this.props.handleDeleteUser(user.id)}>Xóa</button>
+                                                <button onClick={() => props.handleDeleteUser(user.id)}>Xóa</button>
                                             </div>
                                         </div>
                                     )
@@ -38,7 +52,7 @@ class DisplayInfor extends React.Component{
                 }
             </div>
         )
-    }
-    }
+}
+
 
 export default DisplayInfor;
