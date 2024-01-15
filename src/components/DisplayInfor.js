@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import logo from "./../logo.png"
 
 // class DisplayInfor extends React.Component{
@@ -31,10 +31,19 @@ import logo from "./../logo.png"
 
 const DisplayInfor = (props) => {
         const {listUsers} = props;
+        const [isShowHideListUser, setShowHideListUser] = useState(true);
+        const handleShowHideListUser = () => {
+            setShowHideListUser(!isShowHideListUser)
+        }        
         return(
             <div>
                 {/*img src={logo} className="img"/ */}
-                {true && 
+                <div>
+                    <span onClick={() => handleShowHideListUser()}>
+                        {isShowHideListUser === true ? "Hide list users":"Show list users"}
+                    </span>
+                </div>
+                {isShowHideListUser && 
                     <div>
                         {listUsers.map((user, index) => {
                             return (
