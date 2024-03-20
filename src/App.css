@@ -22,6 +22,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@media (min-width: 1350px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 1300px!important;
+  }
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -29,9 +35,70 @@ code {
 
 .app-container {
   .header-container{
-    .navbar-nav .nav-link.active{
-      color: red;
+
+     .btn-login {
+      border-radius: 5px;
+      margin-right: 15px;
+      padding: 0 15px;
+      border: 1px solid #535353;
+      height: 40px;
+     }
+
+    .btn-signup {
+        border-radius: 5px;
+        padding: 0 15px;
+        border: 1px solid #525252;
+        color: rgb(147, 145, 145);
+        &:hover {
+          background: black;
+        }
+        height: 40px;
     }
 
+    .navbar{
+      padding-top: 20;
+      z-index: 10;
+      background-color: rgba(red, green, blue, alpha); 
+      .nav-link {
+        &.active{
+          color: #00bfff;
+        }
+      }
+    } 
   }
+  .homepage-container{
+    .homepage-content {
+      padding: 100 px;
+      width: 50%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+
+      .title-1{
+        font-size: 45px;
+        font-weight: 600;
+      }
+
+      .title-2{
+        font-size: 25px;
+      }
+
+      .title-3{
+        button{
+          border-radius: 5px;
+        }
+      }
+
+    }
+  }
+}
+
+
+
+video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100vm;
 }
